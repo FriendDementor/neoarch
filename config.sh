@@ -17,6 +17,8 @@ sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /et
 
 ## disallow port 22 on ssh
 sed -i 's/#Port 22/Port 42686/g' /etc/ssh/sshd_config
+sed -i 's/UsePrivilegeSeparation sandbox/#UsePrivilegeSeparation sandbox/g' /etc/ssh/sshd_config
 
+## autostart sshd when restart
 systemctl enable sshd
-systemctl start sshd
+
