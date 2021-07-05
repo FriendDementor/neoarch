@@ -8,6 +8,7 @@ pacman --sync sudo --noconfirm
 
 ## create user
 timestamp=$(date +"%s")
+echo $timestamp
 useradd --create-home dementor
 usermod --append --groups wheel dementor
 printf $timestamp"\n"$timestamp | passwd dementor
@@ -22,4 +23,5 @@ sed -i 's/UsePrivilegeSeparation sandbox/#UsePrivilegeSeparation sandbox/g' /etc
 systemctl enable sshd
 
 ## ufw
+
 
