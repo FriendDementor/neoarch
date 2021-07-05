@@ -21,5 +21,5 @@ sed -i 's/ListenStream=22/ListenStream=42686/g' /etc/systemd/system/sshd.socket
 sed -i 's/UsePrivilegeSeparation sandbox/#UsePrivilegeSeparation sandbox/g' /etc/ssh/sshd_config
 systemctl enable sshd
 
-
+## ufw
 
