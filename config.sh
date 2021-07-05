@@ -7,10 +7,10 @@ pacman -Syu --noconfirm
 pacman --sync sudo --noconfirm
 
 ## create user
+timestamp=$(date +"%s")
 useradd --create-home dementor
-
-## adding user to wheel
 usermod --append --groups wheel dementor
+printf $timestamp"\n"$timestamp | passwd dementor
 
 ## allow wheel users use sudo
 sed -i 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers
