@@ -24,5 +24,7 @@ sed -i 's/UsePrivilegeSeparation sandbox/#UsePrivilegeSeparation sandbox/g' /etc
 systemctl enable sshd
 
 ## ufw
-
-
+pacman -S ufw
+ufw enable
+ufw default deny incoming
+ufw limit 42686
